@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="杭州厂房出租出售信息平台，提供杭州工业园区、标准厂房、独院厂房、定制厂房等房源信息，涵盖余杭、临平、萧山、钱塘等区域，满足企业选址、扩建及搬迁需求。">
+    <meta name="keywords" content="杭州厂房,杭州厂房出租,杭州厂房出售,杭州工业园区,杭州厂房租赁,杭州厂房招商">
+    <title>杭州厂房-杭州工业园区厂房出租出售与招商信息平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #e0e0e0;
+            --accent-color: #ff9800;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: #f4f6f9;
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            color: var(--text-light);
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
+        }
+
+        .main-header {
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 600px;
+            margin: 0 2rem;
+            display: flex;
+            background: #f0f2f5;
+            border-radius: 6px;
+            padding: 0.3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .search-bar select, .search-bar input {
+            border: none;
+            background: transparent;
+            padding: 0.5rem;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-bar select {
+            width: 120px;
+            color: var(--text-color);
+        }
+
+        .search-bar input {
+            flex: 1;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .search-bar button:hover {
+            background-color: #004494;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-color);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-menu a.active, .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0d47a1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #1565c0;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Quick Stats */
+        .stats-bar {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: #fff;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .filter-group select {
+            padding: 0.4rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .btn-outline {
+            padding: 0.4rem 1rem;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Main Content Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Property List */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .property-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            transition: box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .property-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .property-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+        }
+
+        .tag.urgent {
+            background-color: #d32f2f;
+        }
+
+        .card-content {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .card-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #d32f2f;
+        }
+
+        .card-price small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .card-location {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-features {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .agent-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .agent-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+
+        .agent-name {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .contact-btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .area-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .area-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .area-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .area-item.active {
+            background-color: #e3f2fd;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .price-range {
+            margin-top: 1rem;
+        }
+
+        .price-range input {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-submit {
+            width: 100%;
+            padding: 0.5rem;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Notice Board */
+        .notice-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        .notice-list li:last-child {
+            border-bottom: none;
+        }
+
+        .notice-list a {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top, .nav-menu, .search-bar {
+                display: none;
+            }
+
+            .main-header {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="header-top">
+        <div class="container">
+            <span>欢迎来到杭州厂房租赁平台</span>
+            <a href="#">发布房源</a>
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <a href="#" class="logo">
+                    杭州厂房
+                    <span>招商网</span>
+                </a>
+
+                <div class="search-bar">
+                    <select>
+                        <option>所有类型</option>
+                        <option>标准厂房</option>
+                        <option>独院厂房</option>
+                        <option>工业园区</option>
+                        <option>定制厂房</option>
+                    </select>
+                    <input type="text" placeholder="输入区域或关键词，如：萧山、电子厂、机械制造...">
+                    <button>搜索</button>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="#" class="active">首页</a>
+                    <a href="#">出租</a>
+                    <a href="#">出售</a>
+                    <a href="#">园区招商</a>
+                    <a href="#">厂房资讯</a>
+                    <a href="#">企业服务</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>海量优质杭州厂房资源</h1>
+            <p>专注杭州及周边地区厂房租赁与出售服务，涵盖余杭、萧山、钱塘、临平等核心工业区，为制造企业提供一站式选址解决方案。</p>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>12,500+</h3>
+                    <p>在租房源</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3,200+</h3>
+                    <p>优质厂房</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1,800+</h3>
+                    <p>入驻企业</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10年+</h3>
+                    <p>行业经验</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label>区域：</label>
+                    <select><option>杭州全城</option><option>余杭区</option><option>萧山区</option><option>钱塘区</option><option>临平区</option><option>临安区</option></select>
+                </div>
+                <div class="filter-group">
+                    <label>面积：</label>
+                    <select><option>任意面积</option><option>500㎡以下</option><option>500-1000㎡</option><option>1000-5000㎡</option><option>5000㎡以上</option></select>
+                </div>
+                <div class="filter-group">
+                    <label>价格：</label>
+                    <select><option>不限价格</option><option>1-2元/㎡/天</option><option>2-3元/㎡/天</option><option>3元/㎡/天以上</option></select>
+                </div>
+                <div class="filter-group">
+                    <label>类型：</label>
+                    <select><option>所有类型</option><option>通用厂房</option><option>电子厂房</option><option>食品加工</option><option>仓储物流</option></select>
+                </div>
+                <button class="btn-outline">筛选</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="main-grid">
+            
+            <!-- Property List -->
+            <section>
+                <div class="section-title">
+                    <h2>最新厂房出租</h2>
+                    <a href="#">查看更多 ></a>
+                </div>
+
+                <!-- Property Card 1 -->
+                <article class="property-card">
+                    <div class="card-image">
+                        <span class="tag">急租</span>
+                        <img src="https://picsum.photos/seed/factory1/800/400" alt="杭州萧山标准厂房">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">萧山经济技术开发区 标准厂房整层出租</h3>
+                            <div class="card-price">2.5 <small>元/㎡/天</small></div>
+                        </div>
+                        <div class="card-location">
+                            <span>📍</span> 杭州市萧山区经济技术开发区
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-item">🏢 面积：2000㎡</span>
+                            <span class="feature-item">🏭 类型：通用厂房</span>
+                            <span class="feature-item">🚛 门口可进货车</span>
+                            <span class="feature-item">⚡ 电量：800KVA</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://picsum.photos/seed/avatar1/50/50" alt="经纪人" class="agent-avatar">
+                                <div>
+                                    <div class="agent-name">李经理</div>
+                                    <div style="font-size:0.8rem; color:#999;">在线咨询</div>
+                                </div>
+                            </div>
+                            <a href="#" class="contact-btn">立即联系</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property Card 2 -->
+                <article class="property-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/factory2/800/400" alt="杭州余杭独院厂房">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">余杭良渚文化村 独院厂房出售</h3>
+                            <div class="card-price">280 <small>万/套</small></div>
+                        </div>
+                        <div class="card-location">
+                            <span>📍</span> 杭州市余杭区良渚街道
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-item">🏢 面积：1200㎡</span>
+                            <span class="feature-item">🏠 独门独院</span>
+                            <span class="feature-item">🚿 卫生间配套</span>
+                            <span class="feature-item">🌳 绿化率高</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://picsum.photos/seed/avatar2/50/50" alt="经纪人" class="agent-avatar">
+                                <div>
+                                    <div class="agent-name">王总监</div>
+                                    <div style="font-size:0.8rem; color:#999;">电话：138****0000</div>
+                                </div>
+                            </div>
+                            <a href="#" class="contact-btn">预约看房</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Property Card 3 -->
+                <article class="property-card">
+                    <div class="card-image">
+                        <span class="tag">园区</span>
+                        <img src="https://picsum.photos/seed/factory3/800/400" alt="钱塘区智慧工厂">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">钱塘新区 智能制造产业园招商</h3>
+                            <div class="card-price">1.8 <small>元/㎡/天起</small></div>
+                        </div>
+                        <div class="card-location">
+                            <span>📍</span> 杭州市钱塘区下沙街道
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-item">🏢 面积：500-5000㎡</span>
+                            <span class="feature-item">🏭 精装修交付</span>
+                            <span class="feature-item">🚢 货运码头</span>
+                            <span class="feature-item">🎓 人才公寓</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://picsum.photos/seed/avatar3/50/50" alt="经纪人" class="agent-avatar">
+                                <div>
+                                    <div class="agent-name">园区招商办</div>
+                                    <div style="font-size:0.8rem; color:#999;">长期合作</div>
+                                </div>
+                            </div>
+                            <a href="#" class="contact-btn">咨询详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                 <!-- Property Card 4 -->
+                 <article class="property-card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/factory4/800/400" alt="临平食品加工厂房">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="card-title">临平食品工业园 食品级净化厂房</h3>
+                            <div class="card-price">3.2 <small>元/㎡/天</small></div>
+                        </div>
+                        <div class="card-location">
+                            <span>📍</span> 杭州市临平区星桥街道
+                        </div>
+                        <div class="card-features">
+                            <span class="feature-item">🏢 面积：800㎡</span>
+                            <span class="feature-item">🏭 净化车间</span>
+                            <span class="feature-item">🚿 上下水齐全</span>
+                            <span class="feature-item">📞 厂房证齐全</span>
+                        </div>
+                        <div class="card-footer">
+                            <div class="agent-info">
+                                <img src="https://picsum.photos/seed/avatar4/50/50" alt="经纪人" class="agent-avatar">
+                                <div>
+                                    <div class="agent-name">陈先生</div>
+                                    <div style="font-size:0.8rem; color:#999;">在线咨询</div>
+                                </div>
+                            </div>
+                            <a href="#" class="contact-btn">立即联系</a>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Sidebar -->
+            <aside>
+                <!-- Area Filter Widget -->
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">热门区域</h4>
+                    <div class="area-list">
+                        <div class="area-item active">萧山区 (3,450)</div>
+                        <div class="area-item">余杭区 (2,800)</div>
+                        <div class="area-item">钱塘区 (2,100)</div>
+                        <div class="area-item">临平区 (1,850)</div>
+                        <div class="area-item">临安区 (980)</div>
+                        <div class="area-item">拱墅区 (650)</div>
+                    </div>
+                </div>
+
+                <!-- Price Filter Widget -->
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">价格区间筛选</h4>
+                    <div class="price-range">
+                        <input type="text" placeholder="最低价 (元/天)" value="1">
+                        <input type="text" placeholder="最高价 (元/天)" value="5">
+                        <button class="price-submit">查询</button>
+                    </div>
+                </div>
+
+                <!-- Notice Board -->
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">最新资讯</h4>
+                    <ul class="notice-list">
+                        <li><a href="#">杭州制造业升级政策解读</a></li>
+                        <li><a href="#">2024年萧山工业园区租金走势分析</a></li>
+                        <li><a href="#">钱塘区人才引进厂房补贴申请指南</a></li>
+                        <li><a href="#">厂房租赁合同中的避坑指南</a></li>
+                        <li><a href="#">如何选择适合的厂房类型？</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        杭州厂房
+                        <span>招商网</span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        杭州厂房招商网致力于为制造企业提供高效、精准的厂房租赁与出售信息服务。我们汇聚了杭州及周边地区海量优质厂房资源，涵盖标准厂房、独院厂房、工业园区等多种类型，助力企业快速选址，实现降本增效。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">厂房出租</a></li>
+                        <li><a href="#">厂房出售</a></li>
+                        <li><a href="#">工业园区</a></li>
+                        <li><a href="#">厂房资讯</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">发布房源</a></li>
+                        <li><a href="#">企业认证</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：0571-8888-8888</li>
+                        <li>邮箱：contact@hzfactory.com</li>
+                        <li>地址：杭州市余杭区文一西路969号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 杭州厂房招商网 版权所有 | 专注于杭州厂房租赁与出售服务</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
