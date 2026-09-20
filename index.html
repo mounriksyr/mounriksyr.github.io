@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="可是你没有 - 专注于情感陪伴、心理疗愈与心灵成长的在线社区。提供情感咨询、深夜电台、治愈系文章及互助交流平台。">
+    <meta name="keywords" content="可是你没有, 情感咨询, 心理疗愈, 深夜电台, 治愈系文章, 情感社区">
+    <title>可是你没有-情感陪伴与心灵疗愈指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e9eab;
+            --secondary-color: #eef2f3;
+            --accent-color: #6c757d;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .header-actions button:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 6rem 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(142, 158, 171, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid #e0e0e0;
+            font-size: 1rem;
+            box-shadow: var(--shadow);
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-card);
+            margin-top: -3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 3rem;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .feature-item h3 {
+            margin: 1rem 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Content Grid */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 2rem; }
+            nav ul { display: none; }
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e0e0e0;
+        }
+
+        /* Articles List */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            display: flex;
+            gap: 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            transition: var(--transition);
+        }
+
+        .article-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .article-thumb {
+            width: 120px;
+            height: 90px;
+            background-color: #eee;
+            border-radius: 4px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .article-content {
+            flex: 1;
+        }
+
+        .article-tag {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .article-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: #999;
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-widget {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .topic-list li {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 0.8rem;
+        }
+
+        .topic-list li:last-child {
+            border-bottom: none;
+        }
+
+        .topic-list a {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .topic-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .topic-count {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.6;
+        }
+
+        .quote-author {
+            color: #bdc3c7;
+            font-size: 1rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem 1.2rem;
+            color: var(--text-light);
+            border-top: 1px solid #f0f0f0;
+            display: none;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .icon-plus {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495e;
+            color: #bdc3c7;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-container">
+        <a href="#" class="logo">
+            <span>❖</span> 可是你没有
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">情感专栏</a></li>
+                <li><a href="#">深夜电台</a></li>
+                <li><a href="#">心理咨询</a></li>
+                <li><a href="#">互助社区</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button>加入我们</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>这里没有标准答案，只有懂你的声音</h1>
+            <p>在喧嚣的世界里，我们为你提供一个安静角落。无论你是感到孤独、迷茫，还是渴望被理解，这里都有人在倾听。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索你正在经历的情感... (例如：失恋、焦虑、成长)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <div class="container">
+        <section class="features">
+            <div class="feature-item">
+                <div class="feature-icon">🎧</div>
+                <h3>深夜电台</h3>
+                <p>每晚一段温暖的声音，伴你入眠，抚平内心的褶皱。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💬</div>
+                <h3>匿名树洞</h3>
+                <p>安全保密的倾诉空间，说出你的秘密，获得陌生人真诚的建议。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📖</div>
+                <h3>治愈系阅读</h3>
+                <p>精选心理学文章与情感故事，帮助你重新认识自己。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🤝</div>
+                <h3>同行者计划</h3>
+                <p>寻找志同道合的朋友，在互助中走出阴霾，重拾力量。</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container section-padding">
+        <div class="grid-layout">
+            <!-- Articles -->
+            <div class="content-area">
+                <h2 class="section-title">最新文章</h2>
+                <div class="article-list">
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/love1/200/150" alt="文章配图" class="article-thumb">
+                        <div class="article-content">
+                            <span class="article-tag">情感修复</span>
+                            <h3 class="article-title">为什么我们总是习惯性地在深夜里想念一个人？</h3>
+                            <p class="article-excerpt">心理学研究表明，夜晚是人类情感最为脆弱的时刻。那些白日里被理智压抑的思念，会在深夜里翻涌而上...</p>
+                            <div class="article-meta">
+                                <span>作者: 林深</span>
+                                <span>•</span>
+                                <span>阅读: 2.3k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/mental/200/150" alt="文章配图" class="article-thumb">
+                        <div class="article-content">
+                            <span class="article-tag">心理成长</span>
+                            <h3 class="article-title">接纳不完美的自己，才是真正的成熟</h3>
+                            <p class="article-excerpt">我们从小被教育要优秀，要完美。但现实中，焦虑往往来源于对“不够好”的恐惧。学会拥抱自己的缺陷...</p>
+                            <div class="article-meta">
+                                <span>作者: 心理师阿哲</span>
+                                <span>•</span>
+                                <span>阅读: 1.8k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/friend/200/150" alt="文章配图" class="article-thumb">
+                        <div class="article-content">
+                            <span class="article-tag">人际关系</span>
+                            <h3 class="article-title">成年人的友谊：筛选比维系更重要</h3>
+                            <p class="article-excerpt">随着年龄增长，我们意识到并不是所有的朋友都适合留在身边。建立高质量的关系，需要学会及时止损...</p>
+                            <div class="article-meta">
+                                <span>作者: 沐风</span>
+                                <span>•</span>
+                                <span>阅读: 3.1k</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">热门话题</h4>
+                    <ul class="topic-list">
+                        <li><a href="#"><span># 离婚后的重建生活</span> <span class="topic-count">1.2w</span></a></li>
+                        <li><a href="#"><span># 35岁失业的焦虑</span> <span class="topic-count">9.8k</span></a></li>
+                        <li><a href="#"><span># 亲子关系中的沟通障碍</span> <span class="topic-count">7.5k</span></a></li>
+                        <li><a href="#"><span># 单身女性的自我提升</span> <span class="topic-count">6.2k</span></a></li>
+                        <li><a href="#"><span># 职场PUA如何应对</span> <span class="topic-count">5.4k</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">每日一句</h4>
+                    <blockquote style="font-style: italic; color: #555; border-left: 3px solid var(--primary-color); padding-left: 15px;">
+                        “生活不是等待风暴过去，而是学会在雨中跳舞。”
+                    </blockquote>
+                    <p style="text-align: right; margin-top: 10px; font-size: 0.9rem;">—— 维维安·格林</p>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">精选电台</h4>
+                    <ul class="topic-list">
+                        <li><a href="#"><span>给迷茫期的你：勇敢出发</span></a></li>
+                        <li><a href="#"><span>告别过去的最好方式</span></a></li>
+                        <li><a href="#"><span>如何建立自信的内心世界</span></a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Quote Banner -->
+    <section class="quote-section">
+        <div class="container">
+            <p class="quote-text">“也许你觉得自己很平凡，但正是这些平凡的瞬间，构成了独一无二的你。我们或许没有显赫的身份，也没有惊天动地的成就，但我们拥有彼此陪伴的勇气。”</p>
+            <p class="quote-author">—— <strong>可是你没有</strong> 官方寄语</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <div class="container section-padding">
+        <h2 class="section-title">常见问题</h2>
+        <div class="faq-list">
+            <div class="faq-item active">
+                <div class="faq-question">
+                    在这里倾诉是匿名的吗？
+                    <span class="icon-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    是的，我们非常重视用户的隐私安全。所有交流均经过加密处理，且在发布内容时，系统会自动隐藏你的真实身份信息。你可以完全放心地分享你的故事。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    如果我遇到紧急情况该怎么办？
+                    <span class="icon-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    虽然我们致力于提供情感支持，但我们不是专业的急救机构。如果您或他人处于生命危险中，请立即拨打当地的紧急救援电话（如中国大陆为110或120）。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    我可以申请成为心理咨询师吗？
+                    <span class="icon-plus">+</span>
+                </div>
+                <div class="faq-answer">
+                    我们欢迎具备专业资质的心理咨询师加入我们的志愿者团队。请通过“加入我们”按钮提交您的简历及相关证书，我们的审核团队会在5个工作日内与您联系。
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    <strong>可是你没有</strong> 是一个致力于心理健康与情感互助的社区平台。我们相信每个人都有被理解的权利，致力于打破孤独的壁垒。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于平台</a></li>
+                    <li><a href="#">服务条款</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">帮助中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>邮箱：support@keshinimeiniyou.com</li>
+                    <li>地址：上海市心理互助路88号</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 可是你没有平台 版权所有
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Toggle Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            
+            // Close others
+            document.querySelectorAll('.faq-item').forEach(other => {
+                if (other !== parent) {
+                    other.classList.remove('active');
+                }
+            });
+            
+            // Toggle current
+            parent.classList.toggle('active');
+        });
+    });
+
+    // Simple Search Focus Effect
+    const searchInput = document.querySelector('.search-box input');
+    searchInput.addEventListener('focus', () => {
+        // Placeholder change logic could go here
+    });
+</script>
+
+</body>
+</html>
